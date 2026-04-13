@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miuxic | IA Audio Recognition</title>
+    <style>
+        /* Definición de Paletas de Colores */
+        :root {
+            /* MODO OSCURO (Default) */
+            --principal: #4c007d;
+            --secundario: #9c0720;
+            --acento: #00276a;
+            --fondo: #0a0a0a;
+            --texto: #ffffff;
+            --card-bg: #1a1a1a;
+        }
+
+        [data-theme="light"] {
+            /* MODO CLARO */
+            --principal: #bc4ed8;
+            --secundario: #f1666d;
+            --acento: #5b7dcf;
+            --fondo: #f5f5f5;
+            --texto: #1a1a1a;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* DISEÑO RESPONSIVO (MOBILE FIRST) */
+        .container {
+            width: 90%;
+            max-width: 400px; /* Tamaño móvil */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* AJUSTE PARA FULL HD (1920x1080) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 800px;
+                padding: 100px 20px;
+            }
+            .logo { font-size: 5rem !important; }
+            .record-btn { width: 180px !important; height: 180px !important; }
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--principal);
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--principal);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .record-btn {
+            background: linear-gradient(135deg, var(--principal), var(--secundario));
+            border: none;
+            border-radius: 50%;
+            width: 140px;
+            height: 140px;
+            margin: 40px 0;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(76, 0, 125, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .record-btn svg {
+            fill: white;
+            width: 60px;
+        }
+
+        .status-text {
+            color: var(--acento);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" id="themeBtn">Cambiar Modo</button>
+
+    <div class="container">
+        <div class="logo">miuxic</div>
+        <p id="subtitulo">Toca para reconocer música</p>
+
+        <button class="record-btn">
+            <svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+        </button>
+
+        <div class="status-text">Sistema Listo</div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('themeBtn');
+        const body = document.body;
+
+        btn.onclick = () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                body.removeAttribute('data-theme');
+                btn.innerText = "Modo Claro";
+            } else {
+                body.setAttribute('data-theme', 'light');
+                btn.innerText = "Modo Oscuro";
+            }
+        };
+    </script>
+</body>
+</html>
