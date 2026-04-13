@@ -7,25 +7,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Definición de Paleta (MODO OSCURO POR DEFECTO) */
+            /* MODO OSCURO (Fondo Negro) */
             --m-color: #9c0720;  /* Roja */
-            --i-color: #555555;  /* Gris Oscuro (para el modo oscuro) */
+            --i-color: #aaaaaa;  /* Gris CLARO (para que resalte en negro) */
             --ux-color: #4c007d; /* Morada */
             --c-color: #00276a;  /* Azul */
             --bg: #0a0a0a; 
             --card: #161616; 
-            --text-base: #ffffff; /* Texto de párrafo, sigue siendo blanco */
+            --text-base: #ffffff;
         }
 
         [data-theme="light"] {
-            /* Definición de Paleta (MODO CLARO) */
+            /* MODO CLARO (Fondo Blanco) */
             --m-color: #f1666d;  /* Roja clara */
-            --i-color: #aaaaaa;  /* Gris Claro (para el modo claro) */
+            --i-color: #555555;  /* Gris OSCURO (para que resalte en blanco) */
             --ux-color: #bc4ed8; /* Morada clara */
             --c-color: #5b7dcf;  /* Azul clara */
             --bg: #f5f5f5; 
             --card: #ffffff; 
-            --text-base: #1a1a1a; /* Texto de párrafo, oscuro */
+            --text-base: #1a1a1a;
         }
 
         body {
@@ -50,7 +50,6 @@
             margin-bottom: 60px;
         }
 
-        /* LOGO CON COLORES POR LETRA EXACTOS */
         .logo { font-size: 3.5rem; font-weight: 900; letter-spacing: -2px; }
         .m { color: var(--m-color); }
         .i { color: var(--i-color); }
@@ -104,7 +103,7 @@
         <div class="upload-box">
             <span style="font-size: 3rem;">📁</span>
             <h3>Subir Canción</h3>
-            <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px; color: var(--text-base);">Arrastra o selecciona un archivo</p>
+            <p style="opacity: 0.6; font-size: 0.8rem; margin-top: 10px;">Arrastra o selecciona un archivo</p>
         </div>
 
         <div class="platform-btns">
