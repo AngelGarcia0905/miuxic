@@ -7,13 +7,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --m-color: #9c0720; --ux-color: #4c007d; --ic-color: #00276a;
-            --bg: #0a0a0a; --card: #161616; --text: #ffffff;
+            --m-color: #9c0720; /* Roja */
+            --ux-color: #4c007d; /* Morada */
+            --c-color: #00276a; /* Azul */
+            --bg: #0a0a0a; 
+            --card: #161616; 
+            --text: #ffffff; /* Letras base (blancas) */
         }
 
         [data-theme="light"] {
-            --m-color: #f1666d; --ux-color: #bc4ed8; --ic-color: #5b7dcf;
-            --bg: #f5f5f5; --card: #ffffff; --text: #1a1a1a;
+            --m-color: #f1666d; 
+            --ux-color: #bc4ed8; 
+            --c-color: #5b7dcf; 
+            --bg: #f5f5f5; 
+            --card: #ffffff; 
+            --text: #1a1a1a; /* Letras base (oscuras para que se vean) */
         }
 
         body {
@@ -38,11 +46,12 @@
             margin-bottom: 60px;
         }
 
-        /* LOGO CON COLORES POR LETRA */
-        .logo { font-size: 3rem; font-weight: 900; letter-spacing: -2px; }
+        /* LOGO CON COLORES CORREGIDOS */
+        .logo { font-size: 3.5rem; font-weight: 900; letter-spacing: -2px; }
         .m { color: var(--m-color); }
         .ux { color: var(--ux-color); }
-        .ic { color: var(--ic-color); }
+        .c { color: var(--c-color); }
+        .base { color: var(--text); } /* Esta clase es para las letras "i" */
 
         .theme-btn {
             padding: 10px 20px;
@@ -82,7 +91,7 @@
 
     <header class="header">
         <div class="logo">
-            <span class="m">m</span><span class="ux">ux</span><span class="ic">ic</span>
+            <span class="m">m</span><span class="base">i</span><span class="ux">ux</span><span class="base">i</span><span class="c">c</span>
         </div>
         <button class="theme-btn" id="themeToggle">MODO CLARO</button>
     </header>
